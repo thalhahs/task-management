@@ -1,5 +1,4 @@
 import { Tasks } from "./tasks";
-import { CounterIncrement } from "./modules/counter/counter-increment";
 
 export function App() {
   return (
@@ -8,8 +7,6 @@ export function App() {
         <h1 className="my-4 text-2xl font-bold text-sky-700">
           Task Management
         </h1>
-
-        <CounterIncrement />
 
         <Tasks />
       </main>
