@@ -2,7 +2,7 @@ import * as z from "zod";
 
 export const TaskSchema = z.object({
   id: z.number().positive(),
-  title: z.string().min(2).max(100),
+  title: z.string().min(1).max(100),
   isDone: z.boolean(),
 });
 
