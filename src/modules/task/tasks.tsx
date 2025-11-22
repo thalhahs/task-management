@@ -4,13 +4,7 @@ import { Label } from "@/components/ui/label";
 import { EyeIcon, TrashIcon } from "lucide-react";
 import { useState } from "react";
 
-type Task = {
-  id: number;
-  title: string;
-  isDone: boolean;
-};
-
-type Tasks = Task[];
+import { type Task, type Tasks } from "@/modules/task/schema";
 
 const initialDataTasks: Tasks = [
   { id: 1, title: "Breakfast", isDone: true },
