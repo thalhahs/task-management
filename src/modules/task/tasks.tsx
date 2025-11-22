@@ -30,7 +30,19 @@ export function Tasks() {
   function handleCreate(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    console.log("Handle Create");
+    const formData = new FormData(event.currentTarget);
+
+    const title = formData.get("title");
+
+    const newId = tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1;
+
+    const newTask = {
+      id: newId,
+      title,
+      isDone: false,
+    };
+
+    console.log(newTask);
   }
 
   return (
