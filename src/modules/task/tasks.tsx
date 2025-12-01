@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { EyeIcon, TrashIcon } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { TaskSchema, type Task, type Tasks } from "@/modules/task/schema";
 import { Link } from "react-router";
 import z from "zod";
@@ -10,7 +10,14 @@ import { initialDataTasks } from "@/modules/task/data";
 import { toast } from "sonner";
 
 export function Tasks() {
-  const [tasks, setTasks] = useState(initialDataTasks);
+  const [tasks, setTasks] = useState(() => {
+    const storedTasks = localStorage.getItem("tasks");
+    return storedTasks ? (JSON.parse(storedTasks) as Tasks) : initialDataTasks;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function handleDelete(id: number) {
     const updatedTasks = tasks.filter((task) => task.id !== id);
