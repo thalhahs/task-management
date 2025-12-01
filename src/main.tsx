@@ -5,7 +5,7 @@ import "@/index.css";
 import { Layout } from "@/layouts/layout";
 import { App } from "@/app";
 import { About } from "@/routes/about";
-import { TaskId } from "@/routes/task-id";
+import { TaskId } from "@/routes/task-id.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
