@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   EyeIcon,
   TrashIcon,
@@ -123,18 +122,6 @@ export function Tasks() {
       }
     }
   }
-
-  const priorityColors = {
-    low: "text-blue-600 dark:text-blue-400",
-    medium: "text-yellow-600 dark:text-yellow-400",
-    high: "text-red-600 dark:text-red-400",
-  };
-
-  const priorityIcons = {
-    low: "🔵",
-    medium: "🟡",
-    high: "🔴",
-  };
 
   return (
     <div className="space-y-8">
